@@ -16,5 +16,6 @@ Before you begin, ensure you have the following installed on your system:
 2. Navigate to the `ai-server` directory where the `requirements.txt` file is located.
 
 3. Install the required Python packages by running the following command in your terminal:
+   pipenv shell
    pip install -r requirements.txt
    uvicorn app:app --reload
