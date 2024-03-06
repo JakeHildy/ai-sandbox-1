@@ -1,0 +1,61 @@
+# General
+.DS_Store
+node_modules/
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+*.pyo
+*.pyd
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Server-side specific
+server/node_modules/
+server/package-lock.json
+server/yarn.lock
+
+# Client-side specific
+client/dist/
+client/.next/
+client/out/
+client/.nuxt/
+
+# External-server specific
+external-server/node_modules/
+external-server/package-lock.json
+external-server/yarn.lock
+
+# IDE specific
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
