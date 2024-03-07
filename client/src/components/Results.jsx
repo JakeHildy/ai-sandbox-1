@@ -5,6 +5,8 @@ import PieChartComponent from './PieChartComponent'
 
 
 const Results = ({responseObj}) => {
+
+    console.log(responseObj);
     return <>
         <Typography variant="h5" component="h2" gutterBottom>Results</Typography>
         {responseObj && <ComponentFactory componentDescription={responseObj} />}
