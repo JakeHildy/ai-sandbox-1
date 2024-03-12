@@ -31,3 +31,11 @@ print(popped_fruit)
 
 del fruits[0]
 print(fruits)
+
+# List Comprehension
+numbers = [1, 2, 3, 4, 5]
+squared_numbers = [number ** 3  for number in numbers]
+print(squared_numbers)
+
+
+randos = ["jake", 4, {"fast": True}, 12]
