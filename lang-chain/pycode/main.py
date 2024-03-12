@@ -7,6 +7,8 @@ import argparse
 
 load_dotenv()
 
+# PromptTemplate, LLMChain, SequentialChain, OpenAI
+
 parser = argparse.ArgumentParser()
 parser.add_argument("--task", default="Return a list of numbers")
 parser.add_argument("--language", default="python")
@@ -47,10 +49,11 @@ result = chain({
     "task": args.task
 })
 
-print('>>>>>>>>> TEST')
-print(result["test"])
 print('>>>>>>>>> CODE')
 print(result["code"])
+print('>>>>>>>>> TEST')
+print(result["test"])
+
 # def return_list():return [1, 2, 3, 4, 5]
 
 
