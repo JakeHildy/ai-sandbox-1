@@ -12,7 +12,7 @@ load_dotenv()
 
 llm = ChatOpenAI()
 # loader = WebBaseLoader("https://docs.smith.langchain.com/user_guide")
-loader = WebBaseLoader("https://api.python.langchain.com/en/latest/chains/langchain.chains.retrieval.create_retrieval_chain.html#langchain.chains.retrieval.create_retrieval_chain")
+loader = WebBaseLoader("https://api.python.langchain.com/en/latest/prompts/langchain_core.prompts.base.BasePromptTemplate.html#langchain_core.prompts.base.BasePromptTemplate")
 embeddings = OpenAIEmbeddings()
 text_splitter = RecursiveCharacterTextSplitter()
 
@@ -43,6 +43,6 @@ document_chain = create_stuff_documents_chain(llm, prompt)
 # 6. Create a retrieval chain
 retrieval_chain = create_retrieval_chain(retriever, document_chain)
 
-response = retrieval_chain.invoke({"input": "can you explain in detail what the create_retrieval_chain function does?"})
+response = retrieval_chain.invoke({"input": "Write a 1 paragraph summary on BasePromptTemplate"})
 print(response["answer"])
 
