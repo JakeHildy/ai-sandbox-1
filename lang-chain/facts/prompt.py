@@ -21,6 +21,6 @@ chain = RetrievalQA.from_chain_type(
     chain_type="stuff"
 )
 
-result = chain.run("What is an interesting fact about the english language?")
+result = chain.run("What is an interesting fact about Thomas Edison?")
 
 print(result)
