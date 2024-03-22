@@ -9,6 +9,7 @@ from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage, AIMessage
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain.chains.retrieval import create_retrieval_chain
+from langchain.tools.retriever import create_retriever_tool
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -35,7 +36,7 @@ prompt = ChatPromptTemplate.from_messages([
 retriever_chain = create_history_aware_retriever(llm, retriever, prompt)
 
 # Mock chat history
-chat_history = [HumanMessage(content="Can LangSmith help test my LLM applications?"), AIMessage(content="Yes!")]
+# chat_history = [HumanMessage(content="Can LangSmith help test my LLM applications?"), AIMessage(content="Yes!")]
 
 # retriever_chain.invoke({
 #     "chat_history": chat_history,
@@ -54,7 +55,7 @@ retrieval_chain = create_retrieval_chain(retriever_chain, document_chain)
 chat_history = [HumanMessage(content="Can LangSmith help test my LLM applications?"), AIMessage(content="Yes!")]
 response = retrieval_chain.invoke({
     "chat_history": chat_history,
-    "input": "Tell me how"
+    "input": "What is the single most useful feature?"
 })
 
 
