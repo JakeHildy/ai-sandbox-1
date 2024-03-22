@@ -8,11 +8,12 @@ from langchain_core.messages import SystemMessage
 
 from tools.sql import list_tables, run_query_tool, describe_tables_tool
 from tools.report import write_report_tool
+from handlers.chat_model_start_handler import ChatModelStartHandler
 
 load_dotenv()
 
-# chat = ChatOpenAI(model="gpt-4-turbo-preview", temperature=0)
-chat = ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
+handler = ChatModelStartHandler()
+chat = ChatOpenAI(model="gpt-3.5-turbo", temperature=0, callbacks=[handler])
 tables = list_tables()
 
 prompt = ChatPromptTemplate.from_messages([
@@ -36,7 +37,7 @@ agent = create_openai_functions_agent(chat, tools, prompt)
 agent_executor = AgentExecutor(
     agent=agent,
     tools=tools,
-    verbose=True,
+    # verbose=True,
     memory=memory
 )
 
